@@ -1,5 +1,5 @@
 /* ===================================
-   PT PERSADA SOKKA TAMA - UPDATED COLOR PALETTE
+   PT PERSADA SOKKA TAMA - NEW COLOR PALETTE
    =================================== */
 
 /* Reset & Variables */
@@ -11,30 +11,31 @@
 
 :root {
     /* New Color Palette */
-    --primary-color: #0B8A8F;        /* Teal hijau */
-    --primary-dark: #006B71;         /* Teal gelap */
-    --primary-light: #5A8CB4;        /* Biru */
-    --accent-color: #8D9AD9;         /* Ungu-biru muda */
-    --background-light: #d6dbe0;     /* Abu-abu terang */
+    --primary-color: #57ccf6;        /* Biru cyan */
+    --primary-dark: #000000;         /* Hitam */
+    --primary-light: #8fd7c6;        /* Hijau mint */
+    --accent-color: #b288c5;         /* Ungu muda */
+    --accent-warm: #ffa62b;          /* Orange */
     
-    /* Keep original button colors */
-    --button-primary: #2a5caa;       /* Original biru untuk tombol */
-    --button-primary-dark: #1e4080;  /* Original biru gelap untuk tombol */
-    --button-primary-light: #4d7bc4; /* Original biru terang untuk tombol */
+    /* Keep specific button colors as requested */
+    --button-edit-add: #2a5caa;      /* Biru untuk edit/add */
+    --button-edit-add-light: #4d7bc4; /* Biru terang untuk edit/add */
+    --button-delete: #e74c3c;        /* Merah untuk delete */
+    --button-delete-dark: #c0392b;   /* Merah gelap untuk delete */
     
     /* Keep original action colors */
     --success-color: #27ae60;
     --warning-color: #f39c12;
     --danger-color: #e74c3c;
     
-    /* Updated neutral colors */
+    /* Updated neutral colors using new palette */
     --white: #ffffff;
-    --light-gray: #d6dbe0;          /* Updated menggunakan palette baru */
-    --gray-200: #8D9AD9;            /* Updated menggunakan accent color */
-    --gray-300: #5A8CB4;            /* Updated menggunakan biru */
-    --gray-500: #006B71;            /* Updated menggunakan teal gelap */
-    --gray-700: #0B8A8F;            /* Updated menggunakan teal */
-    --gray-800: #006B71;            /* Updated menggunakan teal gelap */
+    --light-gray: #b288c5;           /* Ungu muda */
+    --gray-200: #8fd7c6;             /* Hijau mint */
+    --gray-300: #57ccf6;             /* Biru cyan */
+    --gray-500: #000000;             /* Hitam */
+    --gray-700: #000000;             /* Hitam */
+    --gray-800: #000000;             /* Hitam */
     
     --border-radius: 8px;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -46,7 +47,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--gray-700);
-    background: linear-gradient(135deg, var(--background-light) 0%, var(--accent-color) 100%);
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 50%, var(--accent-warm) 100%);
     min-height: 100vh;
 }
 
@@ -71,7 +72,7 @@ h3 { font-size: 1.25rem; }
 
 /* Company Banner */
 .company-banner {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent-color) 100%);
     color: var(--white);
     padding: 1rem 2rem;
     display: flex;
@@ -137,7 +138,7 @@ form {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     margin: 1rem;
-    border: 1px solid var(--background-light);
+    border: 1px solid var(--light-gray);
 }
 
 label {
@@ -161,7 +162,7 @@ input, select, textarea {
 input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(11, 138, 143, 0.1);
+    box-shadow: 0 0 0 3px rgba(87, 204, 246, 0.1);
 }
 
 input[type="file"] {
@@ -172,7 +173,7 @@ input[type="file"] {
 
 input[type="file"]:hover {
     border-color: var(--primary-color);
-    background: rgba(11, 138, 143, 0.05);
+    background: rgba(87, 204, 246, 0.05);
 }
 
 textarea {
@@ -180,7 +181,7 @@ textarea {
     resize: vertical;
 }
 
-/* Buttons - KEEP ORIGINAL COLORS */
+/* Buttons - UPDATED ACCORDING TO REQUIREMENTS */
 button, .button {
     display: inline-flex;
     align-items: center;
@@ -194,7 +195,7 @@ button, .button {
     cursor: pointer;
     transition: all var(--transition);
     box-shadow: var(--shadow);
-    background: linear-gradient(135deg, var(--button-primary), var(--button-primary-light));
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
     color: var(--white);
     margin: 0.25rem;
 }
@@ -208,25 +209,27 @@ button:active, .button:active {
     transform: translateY(0);
 }
 
-/* Button variants for different actions - KEEP ORIGINAL COLORS */
+/* Button variants for different actions */
 button[type="submit"] {
     background: linear-gradient(135deg, var(--success-color), #2ecc71);
 }
 
+/* DELETE buttons stay RED as requested */
 button[formaction*="delete"] {
-    background: linear-gradient(135deg, var(--danger-color), #c0392b);
+    background: linear-gradient(135deg, var(--button-delete), var(--button-delete-dark));
 }
 
 button[formaction*="reject"] {
-    background: linear-gradient(135deg, var(--danger-color), #c0392b);
+    background: linear-gradient(135deg, var(--button-delete), var(--button-delete-dark));
 }
 
 button[formaction*="approve"] {
     background: linear-gradient(135deg, var(--success-color), #2ecc71);
 }
 
-button[type="button"] {
-    background: linear-gradient(135deg, #6c757d, #495057);
+/* EDIT and ADD buttons stay BLUE as requested */
+button[formaction*="edit"], button[formaction*="add"], button[type="button"] {
+    background: linear-gradient(135deg, var(--button-edit-add), var(--button-edit-add-light));
 }
 
 /* Tables */
@@ -256,16 +259,16 @@ th {
 
 td {
     padding: 1rem;
-    border-bottom: 1px solid var(--background-light);
+    border-bottom: 1px solid var(--light-gray);
     transition: background-color 0.2s ease;
 }
 
 tbody tr:hover {
-    background-color: rgba(11, 138, 143, 0.05);
+    background-color: rgba(87, 204, 246, 0.05);
 }
 
 tbody tr:nth-child(even) {
-    background-color: var(--light-gray);
+    background-color: rgba(178, 136, 197, 0.1);
 }
 
 /* Images */
@@ -457,7 +460,7 @@ header {
     
     td {
         border: none;
-        border-bottom: 1px solid var(--background-light);
+        border-bottom: 1px solid var(--light-gray);
         position: relative;
         padding-left: 30%;
         text-align: right;
@@ -502,6 +505,6 @@ html {
 
 /* Selection color */
 ::selection {
-    background: rgba(11, 138, 143, 0.2);
+    background: rgba(87, 204, 246, 0.2);
     color: var(--gray-800);
 }
