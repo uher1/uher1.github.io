@@ -102,6 +102,25 @@ h3 {
     margin-right: 1rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px;
+    animation: logoFloat 3s ease-in-out infinite;
+    transition: transform var(--transition);
+}
+
+.company-logo img:hover {
+    transform: scale(1.05);
+    animation-play-state: paused;
+}
+
+/* Animasi naik-turun untuk logo */
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
 .company-name {
@@ -221,25 +240,35 @@ button:active, .button:active {
 
 /* Action Button Variants - Standar UX */
 button[type="submit"] {
-    background: linear-gradient(135deg, var(--success-color), #2ecc71);
+    background: linear-gradient(135deg, var(--success-color), #2ecc71) !important;
 }
 
 button[formaction*="approve"] {
-    background: linear-gradient(135deg, var(--success-color), #2ecc71);
+    background: linear-gradient(135deg, var(--success-color), #2ecc71) !important;
 }
 
 /* DELETE buttons - MERAH sesuai permintaan dan standar UX */
-button[formaction*="delete"] {
-    background: linear-gradient(135deg, var(--danger-color), var(--danger-dark));
+button[formaction*="delete"], 
+button[onclick*="delete"], 
+button[name*="delete"],
+button.delete-btn,
+input[type="submit"][value*="Delete"],
+input[type="submit"][value*="Hapus"] {
+    background: linear-gradient(135deg, var(--danger-color), var(--danger-dark)) !important;
+    color: var(--white) !important;
 }
 
 button[formaction*="reject"] {
-    background: linear-gradient(135deg, var(--danger-color), var(--danger-dark));
+    background: linear-gradient(135deg, var(--danger-color), var(--danger-dark)) !important;
 }
 
 /* EDIT and ADD buttons - Biru untuk konsistensi UX */
-button[formaction*="edit"], button[formaction*="add"], button[type="button"] {
-    background: linear-gradient(135deg, var(--button-edit-add), var(--button-edit-add-light));
+button[formaction*="edit"], 
+button[formaction*="add"], 
+button[type="button"],
+button[onclick*="edit"],
+button[onclick*="add"] {
+    background: linear-gradient(135deg, var(--button-edit-add), var(--button-edit-add-light)) !important;
 }
 
 /* Tables - Professional warm design */
