@@ -253,13 +253,62 @@ button[onclick*="delete"],
 button[name*="delete"],
 button.delete-btn,
 input[type="submit"][value*="Delete"],
-input[type="submit"][value*="Hapus"] {
-    background: linear-gradient(135deg, var(--danger-color), var(--danger-dark)) !important;
-    color: var(--white) !important;
+input[type="submit"][value*="Hapus"],
+button:contains("Delete"),
+button:contains("delete"),
+*[class*="delete"] button,
+*[id*="delete"] button,
+td button:last-child,
+.actions button:last-child,
+button[style*="background"]:contains("Delete") {
+    background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
+    background-color: #e74c3c !important;
+    color: #ffffff !important;
+    border: 1px solid #c0392b !important;
 }
 
-button[formaction*="reject"] {
-    background: linear-gradient(135deg, var(--danger-color), var(--danger-dark)) !important;
+/* Targeting semua tombol yang mengandung kata Delete */
+button[value*="elete"], 
+button[title*="elete"],
+a[href*="delete"],
+form[action*="delete"] button,
+form[action*="delete"] input[type="submit"] {
+    background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
+    background-color: #e74c3c !important;
+    color: #ffffff !important;
+}
+
+/* Tambahan CSS untuk memaksa tombol Delete menjadi merah */
+table td:last-child button,
+table td button[style],
+table .actions button:nth-child(2),
+td button + button,
+button[class*="btn-success"]:contains("Delete"),
+.btn-success:contains("Delete") {
+    background: #e74c3c !important;
+    background-color: #e74c3c !important;
+    background-image: linear-gradient(135deg, #e74c3c, #c0392b) !important;
+    color: #ffffff !important;
+    border-color: #c0392b !important;
+}
+
+/* Override semua kemungkinan class hijau untuk tombol delete */
+button.btn-success:contains("Delete"),
+.btn-success[value*="Delete"],
+.success:contains("Delete") {
+    background: #e74c3c !important;
+    background-color: #e74c3c !important;
+    background-image: none !important;
+    color: white !important;
+}
+
+/* Selector paling agresif untuk tombol Delete */
+[class*="btn"][style*="background"]:contains("Delete"),
+button[style*="green"]:contains("Delete"),
+button[style*="success"]:contains("Delete") {
+    background: #e74c3c !important;
+    background-color: #e74c3c !important;
+    background-image: linear-gradient(135deg, #e74c3c, #c0392b) !important;
 }
 
 /* EDIT and ADD buttons - Biru untuk konsistensi UX */
