@@ -1,8 +1,8 @@
 /* ===================================
-   PT PERSADA SOKKA TAMA - BALANCED MODERN DESIGN
+   PT PERSADA SOKKA TAMA - SIMPLE CLEAN DESIGN
    =================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* Reset & Variables */
 * {
@@ -12,44 +12,29 @@
 }
 
 :root {
-    /* STRONG Color Palette */
-    --primary-color: #2a5caa;
-    --primary-dark: #1e4080;
-    --primary-light: #4d7bc4;
-    --accent-purple: #9b59b6;
-    --accent-purple-light: #bb6bd9;
-    --accent-purple-dark: #8e44ad;
-    --neon-blue: #3498db;
-    --neon-purple: #9b59b6;
-    --neon-pink: #e91e63;
-    --neon-green: #2ecc71;
-    --success-color: #27ae60;
-    --warning-color: #f39c12;
-    --danger-color: #e74c3c;
-    --edit-color: #3498db;
+    /* Your Color Palette */
+    --primary-dark-blue: #1A3A85;
+    --primary-medium-blue: #30519B;
+    --primary-light-blue: #7894dc;
+    --neutral-gray: #d4d0cd;
+    --neutral-cream: #ece4d4;
     
-    /* Strong Contrast Colors */
+    /* Additional colors for functionality */
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+    
+    /* Neutral colors */
     --white: #ffffff;
-    --off-white: #fefefe;
-    --light-gray: #f8fafc;
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-400: #9ca3af;
-    --gray-500: #6b7280;
-    --gray-600: #4b5563;
-    --gray-700: #374151;
-    --gray-800: #1f2937;
-    --gray-900: #111827;
-    --pure-black: #000000;
+    --black: #000000;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-500: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
     
-    /* Glass & Effects */
-    --glass-bg: rgba(255, 255, 255, 0.9);
-    --glass-border: rgba(255, 255, 255, 0.3);
-    --backdrop-blur: blur(10px);
-    
-    /* Spacing Scale */
+    /* Spacing */
     --space-1: 0.25rem;
     --space-2: 0.5rem;
     --space-3: 0.75rem;
@@ -57,256 +42,149 @@
     --space-5: 1.25rem;
     --space-6: 1.5rem;
     --space-8: 2rem;
-    --space-10: 2.5rem;
-    --space-12: 3rem;
     
-    /* Typography Scale */
-    --text-xs: 0.75rem;
+    /* Typography */
     --text-sm: 0.875rem;
     --text-base: 1rem;
     --text-lg: 1.125rem;
     --text-xl: 1.25rem;
     --text-2xl: 1.5rem;
     --text-3xl: 1.875rem;
-    --text-4xl: 2.25rem;
     
-    /* Radius Scale */
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 20px;
-    --radius-2xl: 28px;
+    /* Border radius */
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
     
-    /* Balanced Shadow Scale */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
-    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
-    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18);
-    --shadow-2xl: 0 20px 40px rgba(0, 0, 0, 0.2);
-    --shadow-glow-blue: 0 0 20px rgba(52, 152, 219, 0.3);
-    --shadow-glow-purple: 0 0 20px rgba(155, 89, 182, 0.3);
-    --shadow-glow-red: 0 0 20px rgba(231, 76, 60, 0.3);
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
     
-    /* Smooth Transitions */
-    --transition-fast: 0.15s ease-out;
-    --transition-base: 0.3s ease-out;
-    --transition-slow: 0.5s ease-out;
+    /* Transitions */
+    --transition: 0.2s ease-in-out;
 }
 
-/* SUBTLE ANIMATED BACKGROUND */
+/* Simple Background */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
     font-size: var(--text-base);
-    font-weight: 400;
     line-height: 1.6;
     color: var(--gray-800);
-    background: 
-        /* Subtle moving gradient */
-        linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe),
-        /* Base gradient */
-        linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    background-size: 400% 400%, 100% 100%;
-    background-attachment: fixed;
-    animation: subtleGradient 20s ease infinite;
+    background: linear-gradient(135deg, var(--neutral-cream) 0%, var(--neutral-gray) 100%);
     min-height: 100vh;
-    font-feature-settings: "cv01", "cv02", "cv03", "cv04";
-    position: relative;
 }
 
-@keyframes subtleGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* READABLE TYPOGRAPHY */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    color: var(--pure-black);
+/* Typography */
+h1, h2, h3 {
+    font-weight: 600;
+    color: var(--gray-900);
     margin-bottom: var(--space-4);
-    line-height: 1.2;
-    letter-spacing: -0.025em;
 }
 
 h1 {
-    font-size: var(--text-4xl);
-    font-weight: 800;
-    color: var(--pure-black);
-    margin-bottom: var(--space-6);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--black);
     text-align: center;
-    /* Strong readable shadow */
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
-    /* NO transparent gradient - solid color for readability */
+    margin-bottom: var(--space-6);
 }
 
-/* STRONG READABLE BANNER */
+/* Company Banner */
 .company-banner {
-    background: 
-        linear-gradient(135deg, 
-            rgba(42, 92, 170, 0.95) 0%, 
-            rgba(155, 89, 182, 0.95) 100%
-        ),
-        /* Subtle pattern overlay */
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="60" height="60" fill="url(%23dots)"/></svg>');
+    background: linear-gradient(135deg, var(--primary-dark-blue) 0%, var(--primary-medium-blue) 100%);
     color: var(--white);
-    padding: var(--space-6) var(--space-8);
+    padding: var(--space-5) var(--space-8);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: var(--shadow-2xl);
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: var(--backdrop-blur);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    z-index: 100;
-}
-
-/* Subtle floating effect */
-.company-banner::before {
-    content: '';
-    position: absolute;
-    top: -10%;
-    left: -10%;
-    width: 120%;
-    height: 120%;
-    background: 
-        radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-    animation: bannerFloat 10s ease-in-out infinite;
-    pointer-events: none;
-}
-
-@keyframes bannerFloat {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(1deg); }
+    box-shadow: var(--shadow-lg);
 }
 
 .company-logo {
     display: flex;
     align-items: center;
-    z-index: 10;
-    position: relative;
 }
 
 .company-logo img {
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     margin-right: var(--space-4);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-md);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     animation: logoFloat 4s ease-in-out infinite;
 }
 
 @keyframes logoFloat {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
+    50% { transform: translateY(-5px); }
 }
 
-/* STRONG READABLE COMPANY NAME */
 .company-name {
-    font-size: var(--text-3xl);
-    font-weight: 800;
+    font-size: var(--text-2xl);
+    font-weight: 700;
     color: var(--white);
-    /* Strong readable shadow with dark background */
-    text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.5),
-        0 0 10px rgba(255, 255, 255, 0.3);
-    letter-spacing: -0.025em;
-    /* NO transparent gradient - pure white for maximum readability */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .company-slogan {
     font-style: italic;
     font-size: var(--text-sm);
-    color: rgba(255, 255, 255, 0.9);
+    opacity: 0.9;
     margin-top: var(--space-1);
     font-weight: 300;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* READABLE NAVIGATION */
+/* Navigation */
 .banner-nav {
     display: flex;
-    gap: var(--space-3);
+    gap: var(--space-4);
     align-items: center;
-    z-index: 10;
-    position: relative;
 }
 
 .banner-nav a {
     color: var(--white);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     font-size: var(--text-sm);
-    padding: var(--space-3) var(--space-5);
-    border-radius: var(--radius-lg);
-    transition: all var(--transition-base);
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: var(--backdrop-blur);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    transition: all var(--transition);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     margin-right: var(--space-2);
-    background: rgba(255, 255, 255, 0.1);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    /* Strong text shadow for readability */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .banner-nav a:hover {
     background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-    /* Enhanced text shadow on hover */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
 }
 
-/* CLEAN READABLE TABLES */
+/* Tables */
 table {
     width: 100%;
     border-collapse: collapse;
-    background: var(--glass-bg);
-    backdrop-filter: var(--backdrop-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-2xl);
+    background: var(--white);
+    border-radius: var(--radius-xl);
     overflow: hidden;
-    box-shadow: var(--shadow-2xl);
-    margin: var(--space-8) var(--space-6);
-    position: relative;
-}
-
-table::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, 
-        var(--primary-color) 0%, var(--accent-purple) 100%
-    );
+    box-shadow: var(--shadow-lg);
+    margin: var(--space-6);
 }
 
 thead {
-    background: linear-gradient(135deg, 
-        var(--primary-color) 0%, 
-        var(--accent-purple) 100%
-    );
+    background: linear-gradient(135deg, var(--primary-medium-blue) 0%, var(--primary-light-blue) 100%);
     color: var(--white);
-    position: relative;
 }
 
 th {
     padding: var(--space-5);
     text-align: left;
-    font-weight: 700;
-    font-size: var(--text-base);
+    font-weight: 600;
+    font-size: var(--text-sm);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    /* Strong readable text shadow */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
 }
 
 /* Center align ACTIONS column */
@@ -316,214 +194,217 @@ th:last-child {
 
 td {
     padding: var(--space-5);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    transition: all var(--transition-base);
-    font-size: var(--text-sm);
-    font-weight: 500;
-    color: var(--gray-900);
-    background: rgba(255, 255, 255, 0.8);
-}
-
-tbody tr {
-    transition: all var(--transition-base);
-    position: relative;
+    border-bottom: 1px solid var(--gray-200);
+    transition: background-color var(--transition);
 }
 
 tbody tr:hover {
-    background: rgba(155, 89, 182, 0.1);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
+    background-color: rgba(120, 148, 220, 0.05);
 }
 
 tbody tr:nth-child(even) {
-    background: rgba(255, 255, 255, 0.6);
+    background-color: var(--gray-100);
 }
 
-tbody tr:nth-child(even):hover {
-    background: rgba(155, 89, 182, 0.15);
-}
-
-/* CLEAN POWERFUL BUTTONS */
+/* Clean Simple Buttons */
 button, .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-4) var(--space-6);
+    padding: var(--space-3) var(--space-5);
     font-size: var(--text-sm);
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
     border: none;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     cursor: pointer;
-    transition: all var(--transition-base);
-    position: relative;
-    overflow: hidden;
+    transition: all var(--transition);
     font-family: inherit;
-    letter-spacing: 0.025em;
-    margin: var(--space-2);
-    min-width: 100px;
-    text-transform: uppercase;
-    /* STRONG READABLE TEXT - Pure white with strong shadow */
+    margin: var(--space-1);
+    min-width: 80px;
     color: var(--white);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Edit Buttons - Soft Blue yang selaras dengan background */
+button:hover, .button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Edit Buttons - Blue from your palette */
 button:contains("Edit"), .button:contains("Edit"),
 a[href*="edit"] button, a[href*="edit"] .button {
-    background: linear-gradient(135deg, #5a7fc7 0%, #667eea 100%);
-    box-shadow: 0 4px 15px rgba(90, 127, 199, 0.3);
-    border: 1px solid rgba(90, 127, 199, 0.4);
-    color: var(--white);
-    font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, var(--primary-medium-blue) 0%, var(--primary-light-blue) 100%);
+    box-shadow: var(--shadow-sm);
 }
 
 button:contains("Edit"):hover, .button:contains("Edit"):hover,
 a[href*="edit"] button:hover, a[href*="edit"] .button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(90, 127, 199, 0.4);
-    background: linear-gradient(135deg, #667eea 0%, #5a7fc7 100%);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(135deg, var(--primary-light-blue) 0%, var(--primary-medium-blue) 100%);
+    box-shadow: var(--shadow-md);
 }
 
-/* Delete Buttons - Soft Muted Red yang tidak terlalu menyala */
+/* Delete Buttons - Clean Red */
 button[formaction*="delete"], 
 form[action*="delete"] button[type="submit"],
 button:contains("Delete"), .button:contains("Delete") {
-    background: linear-gradient(135deg, #e57373 0%, #c62828 100%);
-    box-shadow: 0 4px 15px rgba(229, 115, 115, 0.3);
-    border: 1px solid rgba(229, 115, 115, 0.4);
-    color: var(--white);
-    font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, var(--danger-color) 0%, #c82333 100%);
+    box-shadow: var(--shadow-sm);
 }
 
 button[formaction*="delete"]:hover,
 form[action*="delete"] button[type="submit"]:hover,
 button:contains("Delete"):hover, .button:contains("Delete"):hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(229, 115, 115, 0.4);
-    background: linear-gradient(135deg, #c62828 0%, #e57373 100%);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(135deg, #c82333 0%, var(--danger-color) 100%);
+    box-shadow: var(--shadow-md);
 }
 
-/* Add New Buttons - Harmonis dengan gradient background */
+/* Add New Buttons - Dark blue from your palette for nice contrast */
 a[href*="new"] button, a[href*="new"] .button,
 button:contains("Add"), .button:contains("Add") {
-    background: linear-gradient(135deg, #764ba2 0%, #bb6bd9 100%);
-    box-shadow: 0 6px 20px rgba(118, 75, 162, 0.3);
-    border: 1px solid rgba(118, 75, 162, 0.4);
-    padding: var(--space-5) var(--space-8);
+    background: linear-gradient(135deg, var(--primary-dark-blue) 0%, var(--primary-medium-blue) 100%);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-4) var(--space-6);
     font-size: var(--text-base);
-    margin: var(--space-6) var(--space-6);
-    color: var(--white);
-    font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin: var(--space-6);
 }
 
 a[href*="new"] button:hover, a[href*="new"] .button:hover,
 button:contains("Add"):hover, .button:contains("Add"):hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(118, 75, 162, 0.4);
-    background: linear-gradient(135deg, #bb6bd9 0%, #764ba2 100%);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(135deg, var(--primary-medium-blue) 0%, var(--primary-dark-blue) 100%);
+    box-shadow: var(--shadow-lg);
 }
 
-/* Submit Buttons - Soft Green yang selaras */
+/* Submit Buttons */
 button[type="submit"] {
-    background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
-    box-shadow: 0 4px 15px rgba(102, 187, 106, 0.3);
-    border: 1px solid rgba(102, 187, 106, 0.4);
-    color: var(--white);
-    font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, var(--success-color) 0%, #218838 100%);
+    box-shadow: var(--shadow-sm);
 }
 
 button[type="submit"]:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(102, 187, 106, 0.4);
-    background: linear-gradient(135deg, #43a047 0%, #66bb6a 100%);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(135deg, #218838 0%, var(--success-color) 100%);
+    box-shadow: var(--shadow-md);
 }
 
-/* Secondary Buttons - Soft Gray yang selaras */
+/* Secondary Buttons */
 button[type="button"] {
-    background: linear-gradient(135deg, #78909c 0%, #546e7a 100%);
-    box-shadow: 0 4px 15px rgba(120, 144, 156, 0.3);
-    border: 1px solid rgba(120, 144, 156, 0.4);
-    color: var(--white);
-    font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, var(--gray-500) 0%, var(--gray-700) 100%);
+    box-shadow: var(--shadow-sm);
 }
 
 button[type="button"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(120, 144, 156, 0.4);
-    background: linear-gradient(135deg, #546e7a 0%, #78909c 100%);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(135deg, var(--gray-700) 0%, var(--gray-500) 100%);
+    box-shadow: var(--shadow-md);
 }
 
-/* CLEAN FORMS */
+/* Forms */
 form {
-    background: var(--glass-bg);
-    backdrop-filter: var(--backdrop-blur);
-    border: 1px solid var(--glass-border);
+    background: var(--white);
     padding: var(--space-8);
-    border-radius: var(--radius-2xl);
-    box-shadow: var(--shadow-2xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
     margin: var(--space-6);
-    position: relative;
-}
-
-form::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, 
-        var(--primary-color) 0%, var(--accent-purple) 100%
-    );
+    border-top: 3px solid var(--primary-medium-blue);
 }
 
 label {
     display: block;
-    font-weight: 700;
-    color: var(--gray-900);
+    font-weight: 600;
+    color: var(--gray-700);
     margin-bottom: var(--space-2);
-    margin-top: var(--space-5);
-    font-size: var(--text-sm);
-    letter-spacing: 0.025em;
-    text-transform: uppercase;
+    margin-top: var(--space-4);
 }
 
 input, select, textarea {
     width: 100%;
-    padding: var(--space-4);
+    padding: var(--space-3);
     border: 2px solid var(--gray-300);
-    border-radius: var(--radius-lg);
-    transition: all var(--transition-base);
+    border-radius: var(--radius-md);
+    transition: all var(--transition);
     background: var(--white);
     font-size: var(--text-base);
     font-family: inherit;
-    font-weight: 500;
-    color: var(--gray-900);
-    box-shadow: var(--shadow-sm);
 }
 
 input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: var(--accent-purple);
-    box-shadow: 
-        0 0 0 3px rgba(155, 89, 182, 0.1),
-        var(--shadow-md);
-    transform: translateY(-1px);
-    background: var(--white);
+    border-color: var(--primary-light-blue);
+    box-shadow: 0 0 0 3px rgba(120, 148, 220, 0.1);
 }
 
-/* RESPONSIVE */
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+#preview {
+    border: 2px solid var(--gray-300);
+    max-width: 500px;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+    margin: var(--space-4) auto;
+}
+
+/* Modal */
+dialog {
+    max-width: 600px;
+    border-radius: var(--radius-xl);
+    border: none;
+    padding: 0;
+    box-shadow: var(--shadow-lg);
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+dialog > div {
+    padding: var(--space-8);
+    background: var(--white);
+    border-radius: var(--radius-xl);
+}
+
+/* Navigation Links */
+nav a, a {
+    color: var(--primary-medium-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+}
+
+nav a:hover, a:hover {
+    color: var(--primary-dark-blue);
+}
+
+/* Lists */
+ul {
+    margin: var(--space-4) 0;
+}
+
+li {
+    margin-bottom: var(--space-2);
+}
+
+/* Horizontal Rules */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(135deg, var(--primary-medium-blue) 0%, var(--primary-light-blue) 100%);
+    margin: var(--space-6) 0;
+    border-radius: var(--radius-md);
+}
+
+/* BAST Report Styling */
+h1[style*="text-align: center"] {
+    border-bottom: 3px solid var(--primary-medium-blue);
+    padding-bottom: var(--space-4);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .company-banner {
         flex-direction: column;
@@ -538,6 +419,26 @@ input:focus, select:focus, textarea:focus {
         gap: var(--space-2);
     }
     
+    .banner-nav a {
+        margin-right: var(--space-1);
+        font-size: var(--text-sm);
+        padding: var(--space-2) var(--space-3);
+    }
+    
+    form {
+        margin: var(--space-3);
+        padding: var(--space-6);
+    }
+    
+    table {
+        margin: var(--space-3);
+        font-size: var(--text-sm);
+    }
+    
+    th, td {
+        padding: var(--space-3);
+    }
+    
     h1 {
         font-size: var(--text-2xl);
     }
@@ -545,49 +446,50 @@ input:focus, select:focus, textarea:focus {
     .company-name {
         font-size: var(--text-xl);
     }
-    
-    table {
-        margin: var(--space-4) var(--space-2);
+}
+
+@media (max-width: 480px) {
+    button, .button {
+        padding: var(--space-2) var(--space-4);
+        font-size: var(--text-sm);
+        min-width: 70px;
     }
     
-    button, .button {
-        padding: var(--space-3) var(--space-4);
-        font-size: var(--text-xs);
-        min-width: 80px;
+    dialog {
+        max-width: 90vw;
     }
 }
 
-/* ACCESSIBILITY */
+/* Accessibility */
 html {
     scroll-behavior: smooth;
 }
 
 ::selection {
-    background: rgba(155, 89, 182, 0.2);
+    background: rgba(120, 148, 220, 0.2);
     color: var(--gray-900);
 }
 
 button:focus-visible, .button:focus-visible, 
 input:focus-visible, select:focus-visible, textarea:focus-visible {
-    outline: 2px solid var(--accent-purple);
+    outline: 2px solid var(--primary-light-blue);
     outline-offset: 2px;
 }
 
-/* CLEAN SCROLLBAR */
+/* Clean Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--gray-200);
-    border-radius: var(--radius-md);
+    background: var(--neutral-cream);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-purple));
+    background: var(--primary-medium-blue);
     border-radius: var(--radius-md);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, var(--primary-dark), var(--accent-purple-dark));
+    background: var(--primary-dark-blue);
 }
