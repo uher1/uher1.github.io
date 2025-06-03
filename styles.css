@@ -238,86 +238,69 @@ button:active, .button:active {
     transform: translateY(0);
 }
 
-/* Action Button Variants - Standar UX */
-button[type="submit"] {
-    background: linear-gradient(135deg, var(--success-color), #2ecc71) !important;
+
+
+
+
+
+
+/* EDIT, ADD, dan SAVE buttons - COKLAT dari palette */
+button[formaction*="edit"], 
+button[formaction*="add"], 
+button[type="button"]:not([onclick*="goto"]):not([onclick*="history"]),
+button[onclick*="edit"],
+button[onclick*="add"],
+button[type="submit"]:not([formaction*="approve"]),
+button[value*="Save"],
+button[name*="save"],
+button.save-btn,
+button.edit-btn,
+button.add-btn,
+form button[type="submit"]:not([formaction*="approve"]),
+input[type="submit"]:not([formaction*="approve"]),
+button[value*="Add"],
+button[value*="Edit"] {
+    background: linear-gradient(135deg, #76493b, #5a423f) !important;
+    background-color: #76493b !important;
+    color: #ffffff !important;
+    border: 1px solid #473430 !important;
 }
 
-button[formaction*="approve"] {
-    background: linear-gradient(135deg, var(--success-color), #2ecc71) !important;
+/* APPROVE buttons - HIJAU khusus */
+button[formaction*="approve"],
+button[value*="Approve"],
+button.approve-btn {
+    background: linear-gradient(135deg, #27ae60, #2ecc71) !important;
+    background-color: #27ae60 !important;
+    color: #ffffff !important;
+    border: 1px solid #1e8449 !important;
 }
 
-/* DELETE buttons - MERAH sesuai permintaan dan standar UX */
+/* BACK dan DELETE buttons - MERAH */
+button[type="button"][onclick*="goto"],
+button[value*="Back"],
+button[name*="back"],
+button.back-btn,
+form button[type="button"]:first-of-type,
+form button[type="button"]:nth-child(1),
+button[onclick*="history.back"],
+button[onclick*="window.history"],
 button[formaction*="delete"], 
 button[onclick*="delete"], 
 button[name*="delete"],
 button.delete-btn,
 input[type="submit"][value*="Delete"],
 input[type="submit"][value*="Hapus"],
-button:contains("Delete"),
-button:contains("delete"),
-*[class*="delete"] button,
-*[id*="delete"] button,
-td button:last-child,
-.actions button:last-child,
-button[style*="background"]:contains("Delete") {
-    background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
-    background-color: #e74c3c !important;
-    color: #ffffff !important;
-    border: 1px solid #c0392b !important;
-}
-
-/* Targeting semua tombol yang mengandung kata Delete */
-button[value*="elete"], 
-button[title*="elete"],
-a[href*="delete"],
-form[action*="delete"] button,
-form[action*="delete"] input[type="submit"] {
-    background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
-    background-color: #e74c3c !important;
-    color: #ffffff !important;
-}
-
-/* Tambahan CSS untuk memaksa tombol Delete menjadi merah */
+button[formaction*="reject"],
 table td:last-child button,
 table td button[style],
 table .actions button:nth-child(2),
 td button + button,
-button[class*="btn-success"]:contains("Delete"),
-.btn-success:contains("Delete") {
-    background: #e74c3c !important;
+tbody tr td:last-child button:last-child {
+    background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
     background-color: #e74c3c !important;
-    background-image: linear-gradient(135deg, #e74c3c, #c0392b) !important;
     color: #ffffff !important;
-    border-color: #c0392b !important;
-}
-
-/* Override semua kemungkinan class hijau untuk tombol delete */
-button.btn-success:contains("Delete"),
-.btn-success[value*="Delete"],
-.success:contains("Delete") {
-    background: #e74c3c !important;
-    background-color: #e74c3c !important;
-    background-image: none !important;
-    color: white !important;
-}
-
-/* Selector paling agresif untuk tombol Delete */
-[class*="btn"][style*="background"]:contains("Delete"),
-button[style*="green"]:contains("Delete"),
-button[style*="success"]:contains("Delete") {
-    background: #e74c3c !important;
-    background-color: #e74c3c !important;
-    background-image: linear-gradient(135deg, #e74c3c, #c0392b) !important;
-}
-
-/* EDIT and ADD buttons - Biru untuk konsistensi UX */
-button[formaction*="edit"], 
-button[formaction*="add"], 
-button[type="button"],
-button[onclick*="edit"],
-button[onclick*="add"] {
-    background: linear-gradient(135deg, var(--button-edit-add), var(--button-edit-add-light)) !important;
+    border: 1px solid #c0392b !important;
 }
 
 /* Tables - Professional warm design */
