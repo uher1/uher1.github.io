@@ -722,3 +722,290 @@ html {
     background: rgba(118, 73, 59, 0.2);
     color: var(--text-primary);
 }
+
+/* ===================================
+   WELCOME PAGE STYLING - SUPER KEREN
+   =================================== */
+
+/* Welcome Container */
+.welcome-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+/* Main Welcome Text Styling */
+h1:contains("Welcome"), 
+.welcome-title,
+h1[class*="welcome"],
+h1#welcome,
+.hero-title {
+    font-size: 4rem !important;
+    font-weight: 800 !important;
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    position: relative;
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-light), var(--background-warm), var(--primary-color));
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: welcomeGradient 4s ease-in-out infinite, welcomeFloat 3s ease-in-out infinite;
+    text-shadow: 2px 2px 4px rgba(71, 52, 48, 0.3);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: default;
+    transition: all var(--transition);
+}
+
+/* Welcome Gradient Animation */
+@keyframes welcomeGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Welcome Float Animation */
+@keyframes welcomeFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Welcome Text Hover Effect */
+h1:contains("Welcome"):hover, 
+.welcome-title:hover,
+h1[class*="welcome"]:hover,
+h1#welcome:hover,
+.hero-title:hover {
+    transform: scale(1.05) translateY(-5px) !important;
+    filter: drop-shadow(0 10px 20px rgba(118, 73, 59, 0.4));
+    animation-play-state: paused;
+}
+
+/* Welcome Decorative Elements */
+h1:contains("Welcome")::before, 
+.welcome-title::before,
+h1[class*="welcome"]::before,
+h1#welcome::before,
+.hero-title::before {
+    content: '🏗️';
+    position: absolute;
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    animation: decorIconBounce 2s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+h1:contains("Welcome")::after, 
+.welcome-title::after,
+h1[class*="welcome"]::after,
+h1#welcome::after,
+.hero-title::after {
+    content: '🚛';
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    animation: decorIconBounce 2s ease-in-out infinite 1s;
+    opacity: 0.8;
+}
+
+@keyframes decorIconBounce {
+    0%, 100% {
+        transform: translateY(-50%) scale(1);
+    }
+    50% {
+        transform: translateY(-70%) scale(1.1);
+    }
+}
+
+/* Welcome Subtitle Styling */
+.welcome-subtitle,
+.hero-subtitle,
+h2:contains("Welcome"),
+p[class*="welcome"] {
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    animation: subtitleFadeIn 2s ease-out 0.5s both;
+    position: relative;
+}
+
+@keyframes subtitleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+}
+
+/* Welcome Background Effect */
+.welcome-container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    background: 
+        radial-gradient(circle at 25% 25%, rgba(118, 73, 59, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(220, 190, 144, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(90, 66, 63, 0.08) 0%, transparent 50%);
+    animation: welcomeBackgroundPulse 8s ease-in-out infinite;
+    border-radius: var(--border-radius);
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes welcomeBackgroundPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Welcome Action Buttons */
+.welcome-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.welcome-btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    min-width: 180px;
+}
+
+.welcome-btn.primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--white);
+    box-shadow: 0 6px 20px rgba(118, 73, 59, 0.3);
+}
+
+.welcome-btn.secondary {
+    background: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 6px 20px rgba(118, 73, 59, 0.2);
+}
+
+.welcome-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(118, 73, 59, 0.4);
+}
+
+.welcome-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.welcome-btn:hover::before {
+    left: 100%;
+}
+
+/* Responsive Welcome */
+@media (max-width: 768px) {
+    h1:contains("Welcome"), 
+    .welcome-title,
+    h1[class*="welcome"],
+    h1#welcome,
+    .hero-title {
+        font-size: 2.5rem !important;
+        letter-spacing: 1px;
+    }
+    
+    h1:contains("Welcome")::before, 
+    .welcome-title::before,
+    h1[class*="welcome"]::before,
+    h1#welcome::before,
+    .hero-title::before {
+        left: -40px;
+        font-size: 2rem;
+    }
+    
+    h1:contains("Welcome")::after, 
+    .welcome-title::after,
+    h1[class*="welcome"]::after,
+    h1#welcome::after,
+    .hero-title::after {
+        right: -40px;
+        font-size: 2rem;
+    }
+    
+    .welcome-subtitle,
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .welcome-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1:contains("Welcome"), 
+    .welcome-title,
+    h1[class*="welcome"],
+    h1#welcome,
+    .hero-title {
+        font-size: 1.8rem !important;
+        letter-spacing: 0.5px;
+    }
+    
+    h1:contains("Welcome")::before, 
+    h1:contains("Welcome")::after,
+    .welcome-title::before,
+    .welcome-title::after,
+    h1[class*="welcome"]::before,
+    h1[class*="welcome"]::after,
+    h1#welcome::before,
+    h1#welcome::after,
+    .hero-title::before,
+    .hero-title::after {
+        display: none;
+    }
+    
+    .welcome-container {
+        padding: 1rem;
+    }
+}
